@@ -32,7 +32,7 @@ img{max-width:100%;height:auto}
 .menu-toggle{position:absolute;opacity:0;width:1px;height:1px;margin:0}
 .panneau-sections{display:none}
 .menu-toggle:checked ~ .panneau-sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:.25rem 1.5rem;max-width:80rem;margin:0 auto;padding:1rem;border-top:1px solid #e5e5e5}
-.panneau-sections a{padding:.6rem .25rem;border-bottom:1px solid var(--line);font:600 1rem var(--ui);color:var(--ink);text-decoration:none}
+.panneau-sections a{padding:.6rem .25rem;border-bottom:1px solid var(--line);font:600 1rem var(--ui);color:var(--ink);text-decoration:none;transition:border-bottom-color .3s ease;}
 .panneau-sections a:hover,.panneau-sections a:focus-visible{color:var(--accent);border-bottom-color:var(--accent)}
 /* bouton foncé quand le menu est ouvert, contour visible au clavier */
 .menu-toggle:checked ~ .haut-entete .bouton-sections{background:var(--ink);border-color:var(--ink);color:#fff}
