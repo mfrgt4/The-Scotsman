@@ -20,43 +20,43 @@
 
   <body>
     <!-- Afficher uniquement quand on navigue au clavier -->
-    <a class="skip-link" href="#content">Skip to the article</a>
+    <a class="lien-acces-article" href="#content">Skip to the article</a>
 
-    <header class="scotsman-header">
+    <header class="entete-journal">
       <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-      <div class="header-top">
-        <label for="menu-toggle" class="all-sections"
-          ><span class="burger">≡</span> All Sections</label
+      <div class="haut-entete">
+        <label for="menu-toggle" class="bouton-sections"
+          ><span class="icone-menu">≡</span> All Sections</label
         >
-        <img class="masthead-logo" src="images/Logo.png" alt="The Scotsman" />
-        <span class="header-spacer"></span>
+        <img class="logo-journal" src="images/Logo.png" alt="The Scotsman" />
+        <span class="espace-entete"></span>
       </div>
-      <nav class="nav" aria-label="Main navigation">
+      <navigation class="navigation" aria-label="Main navigation">
         <a href="#">News</a><a href="#">Business</a><a href="#">Opinion</a
         ><a href="#">Arts</a><a href="#">Sport</a
         ><a href="#">Food &amp; Drink</a><a href="#">e-Paper</a
         ><a href="#">Puzzles</a><a href="#">Advertise</a
         ><a href="#">Public Notices</a><a href="#">Heritage</a
-        ><a href="#" class="active">Money</a>
-      </nav>
+        ><a href="#" class="actif">Money</a>
+      </navigation>
     </header>
 
     <main id="content">
       <article class="article">
         <!-- Sections de l'article -->
-        <p class="kicker">Money&emsp; · &emsp;Food</p>
+        <p class="rubrique-article">Money&emsp; · &emsp;Food</p>
 
         <!-- Nom article + chapeau + photo + auteur + date -->
         <h1>Britain’s basket has changed. Scotland’s has changed faster.</h1>
-        <p class="standfirst">
+        <p class="chapeau-article">
           Scots now buy over a third less bread than twenty years ago, and
           nearly a quarter more cheese. Here is what the figures show.
         </p>
-        <figure class="hero">
+        <figure class="image-principale">
           <img src="images/Banner.jpg" alt="Bread and cheese on a table" />
           <figcaption>Picture from Stockcake.</figcaption>
         </figure>
-        <p class="byline">
+        <p class="signature-article">
           By <b>Manon Farget</b><span>· &emsp; Published 27th Nov 2026</span>
         </p>
 
@@ -80,13 +80,13 @@
           Figure 1 shows that swap in one image. Bread falls the same in
           Scotland and in the UK. Cheese rises twice as fast in Scotland.
         </p>
-        <figure class="viz">
-          <h3 class="viz-title">The swap. Less bread, more cheese.</h3>
-          <p class="subtitle">Scotland vs UK, 2005-06 to 2024-25.</p>
+        <figure class="visualisation">
+          <h3 class="titre-visualisation">The swap. Less bread, more cheese.</h3>
+          <p class="sous-titre">Scotland vs UK, 2005-06 to 2024-25.</p>
           <img
             src="images/Figure1.png"
             alt="Grouped bar chart, Scotland in dark gold, UK in light gold, for bread and cheese"
-            class="fig2-img"
+            class="image-figure"
           />
           <figcaption>
             Figure 2. Scotland vs UK, 2005-06 to 2024-25. Source Defra, Family
@@ -111,38 +111,38 @@
           change. Hover over, or tap, a bar for the figures.
         </p>
         <p>
-          Use the controls to change the period or to show only rises or only
+          Use the commandes to change the period or to show only rises or only
           falls.
         </p>
-        <figure class="viz">
-          <h3 class="viz-title" id="viz-title">
+        <figure class="visualisation">
+          <h3 class="titre-visualisation" id="titre-visualisation">
             Biggest rises and falls in what Scots buy
           </h3>
-          <p class="subtitle" id="viz-subtitle"></p>
-          <div class="controls">
+          <p class="sous-titre" id="viz-subtitle"></p>
+          <div class="commandes">
             <div>
-              <label class="field" for="periode">Period</label>
+              <label class="champ" for="periode">Period</label>
               <select id="periode">
                 <option value="long">2005-06 to 2024-25</option>
                 <option value="recent">2019-20 to 2024-25</option>
               </select>
             </div>
             <div>
-              <label class="field" for="sens">Show</label>
+              <label class="champ" for="sens">Show</label>
               <select id="sens">
                 <option value="hausses">Rises Of Scotland</option>
                 <option value="baisses">Falls Of Scotland</option>
               </select>
             </div>
           </div>
-          <div class="chart-box">
+          <div class="zone-graphique">
             <canvas
               id="graphique"
               role="img"
               aria-label="Grouped bar chart of the biggest rises and falls in food purchases in Scotland."
             ></canvas>
           </div>
-          <p class="detail" id="detail" aria-live="polite">
+          <p class="detail-graphique" id="detail-graphique" aria-live="polite">
             Click a bar to see the quantities behind it.
           </p>
           <figcaption>
@@ -176,16 +176,16 @@
         <p>
           Figure 3 shows where the gap is biggest. Fresh green vegetables lead.
         </p>
-        <figure class="viz">
-          <h3 class="viz-title">Watch the gap. Green vegetables lead.</h3>
-          <p class="subtitle">
+        <figure class="visualisation">
+          <h3 class="titre-visualisation">Watch the gap. Green vegetables lead.</h3>
+          <p class="sous-titre">
             Gap Scotland - UK, in points, 2005-06 to 2024-25.
           </p>
           <iframe
-            class="fig3-frame"
+            class="cadre-figure3"
             src="animation/Figure3.html"
             title="Figure 3. Animated bars. Gap Scotland minus UK."
-            class="fig3-frame"
+            class="cadre-figure3"
             scrolling="no"
           ></iframe>
           <figcaption>
@@ -227,7 +227,7 @@
         </p>
 
         <!-- Encadrés en plus -->
-        <aside class="data-note">
+        <aside class="encadre-donnees">
           <h2>About the data</h2>
           <p>
             This article is based on Defra, Family Food datasets, from the
@@ -242,7 +242,7 @@
             eaten out or takeaways.
           </p>
         </aside>
-        <aside class="scotsman-box">
+        <aside class="encadre-recommandation">
           <h2>The Scotsman Recommended</h2>
           <p>
             Check price per kilo on cheese, freeze half your loaf on the day you

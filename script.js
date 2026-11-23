@@ -1,6 +1,6 @@
 // Menu All Sections - marche sur index.html et article.html
 document.addEventListener('DOMContentLoaded', function () {
-  var btn = document.querySelector('.all-sections');
+  var btn = document.querySelector('.bouton-sections');
   var panel = document.getElementById('sectionsPanel');
   if (!btn || !panel) return;
   function closeMenu() { panel.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('click', function (e) {
     if (!panel.contains(e.target) && e.target !== btn) closeMenu();
   });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+  document.addEventListener('keydown', function (e) { if (e.legende === 'Escape') closeMenu(); });
 });
 
 // Graphique : seulement sur article.html, sinon on ne fait rien
@@ -22,7 +22,7 @@ if (document.getElementById("graphique")) {
   // 2. Création du graphique (vide au départ)
   const periode = document.getElementById("periode");
   const sens = document.getElementById("sens");
-  // Petit plugin : écrit le % au bout de chaque barre
+  // Petit plugin : écrit le % au bout de chaque barre-graphique
   const valueLabels = {
     id: "valueLabels",
     afterDatasetsDraw(c) {
@@ -51,7 +51,7 @@ if (document.getElementById("graphique")) {
       ]
     },
     options: {
-      onClick: (evt, els) => { if (els.length) showDetail(els[0].index); }, // Interaction 3 sur le graphique : clic sur une barre
+      onClick: (evt, els) => { if (els.length) showDetail(els[0].index); }, // Interaction 3 sur le graphique : clic sur une barre-graphique
       plugins: { legend: { position: "bottom", labels: { usePointStyle: true, pointStyle: "rect", font: { size: 13 } } } },
       indexAxis: "y",
       maintainAspectRatio: false,
@@ -70,20 +70,20 @@ if (document.getElementById("graphique")) {
     graphique.data.datasets[0].data = d.scotland;
     graphique.data.datasets[1].data = d.uk;
     graphique.update();
-    const detail = document.getElementById("detail");
-    if (detail) detail.textContent = "Click a bar to see the quantities behind it.";
+    const detail-graphique = document.getElementById("detail-graphique");
+    if (detail-graphique) detail-graphique.textContent = "Click a bar to see the quantities behind it.";
     const sousTitre = document.getElementById("viz-subtitle");
     if (sousTitre) {
       const periodeTexte = periode.value === "long" ? "2005-06 to 2024-25" : "2019-20 to 2024-25";
       sousTitre.textContent = "Change in the average quantity bought per person, Scotland, " + periodeTexte + ".";
     }
   }
-  // Affiche le détail quand on clique sur une barre
+  // Affiche le détail quand on clique sur une barre-graphique
   function showDetail(index) {
     const d = donnees[periode.value + "-" + sens.value];
-    const detail = document.getElementById("detail");
-    if (!detail) return;
-    detail.textContent = d.labels[index] + ": Scotland " + (d.scotland[index] > 0 ? "+" : "") + d.scotland[index].toFixed(1) + "%, UK " + (d.uk[index] > 0 ? "+" : "") + d.uk[index].toFixed(1) + "%.";
+    const detail-graphique = document.getElementById("detail-graphique");
+    if (!detail-graphique) return;
+    detail-graphique.textContent = d.labels[index] + ": Scotland " + (d.scotland[index] > 0 ? "+" : "") + d.scotland[index].toFixed(1) + "%, UK " + (d.uk[index] > 0 ? "+" : "") + d.uk[index].toFixed(1) + "%.";
   }
   periode.addEventListener("change", afficher);
   sens.addEventListener("change", afficher);
