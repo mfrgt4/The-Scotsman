@@ -1,5 +1,4 @@
-/* ===== PAGE DE GARDE ===== */
-/* STYLE "THE SCOTSMAN" : fond blanc, titres Georgia gras, interface sans-serif sobre */
+/* STYLE "THE SCOTSMAN" : couleurs + fonts + tailles */
 :root{
   --ink:#111; --ink-soft:#333; --grey:#666; --line:#dcdcdc; --line-dark:#111;
   --bg-soft:#f5f5f5; --accent:#C47A1A; --up:#0B4F8A; --down:#C0392B;
@@ -23,7 +22,7 @@ a{color:inherit}
 .nav a{color:var(--ink);text-decoration:none;cursor:default;padding-bottom:.15rem;border-bottom:3px solid transparent}
 .nav a.active{border-bottom-color:var(--ink);font-weight:700}
 
-/* ===== ARTICLE : colonne de texte étroite, figure plus large ===== */
+/* ===== ARTICLE : colonne de texte étroite, figure plus large pour plus de visibilité ===== */
 .skip-link{position:absolute;left:-999px}
 .skip-link:focus{left:1rem;top:1rem;background:var(--ink);color:#fff;padding:.5rem;z-index:10}
 .article,footer{width:min(var(--wrap),calc(100% - 2.5rem));margin-left:auto;margin-right:auto}
