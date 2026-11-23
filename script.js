@@ -1,5 +1,5 @@
 // Graphique Chart.js de la page index.html
-// Les données (objet "donnees") sont dans data.js, chargé avant ce fichier.
+// Les données ("donnees") sont dans data.js, chargé avant ce fichier.
 
 // On attend que la page soit chargée avant de chercher les éléments
 document.addEventListener("DOMContentLoaded", function () {
