@@ -24,7 +24,37 @@ document.addEventListener("DOMContentLoaded", function () {
     detail.textContent = d.labels[i] + " : Scotland " + formater(d.scotland[i]) + ", UK " + formater(d.uk[i]) + ".";
   }
 
-  // 4. Création du graphique (vide au départ)
+  // 4. Petit plugin : écrit la valeur (avec le %) au bout de chaque barre
+  const valeursSurBarres = {
+    id: "valeursSurBarres",
+    afterDatasetsDraw: function (chart) {             // appelé juste après le dessin des barres
+      const ctx = chart.ctx;                          // le "stylo" pour écrire sur le canvas
+      ctx.save();                                     // on garde le style actuel
+      ctx.font = "600 13px 'Fira Sans', sans-serif";  // police du texte
+      ctx.fillStyle = "#111";                         // texte foncé pour bien lire
+      ctx.textBaseline = "middle";                    // texte centré sur la hauteur de la barre
+
+      chart.data.datasets.forEach(function (serie, s) {      // pour Scotland, puis pour UK
+        if (!chart.isDatasetVisible(s)) return;              // série masquée avec la légende : on saute
+        const barres = chart.getDatasetMeta(s).data;         // les barres de cette série
+        barres.forEach(function (barre, i) {
+          const valeur = serie.data[i];                      // valeur de la barre
+          const x = chart.scales.x.getPixelForValue(valeur); // position du bout de la barre
+          if (valeur > 0) {
+            ctx.textAlign = "left";                          // barre positive : texte à droite du bout
+            ctx.fillText(formater(valeur), x + 6, barre.y);
+          } else {
+            ctx.textAlign = "right";                         // barre négative : texte à gauche du bout
+            ctx.fillText(formater(valeur), x - 6, barre.y);
+          }
+        });
+      });
+
+      ctx.restore();                                  // on remet le style d'avant
+    }
+  };
+
+  // 5. Création du graphique (vide au départ)
   const graphique = new Chart(document.getElementById("graphique"), {
     type: "bar",
     data: {
@@ -41,10 +71,11 @@ document.addEventListener("DOMContentLoaded", function () {
       scales: {
         x: { min: -50, max: 40, title: { display: true, text: "Change in quantity bought (%)" } }
       }
-    }
+    },
+    plugins: [valeursSurBarres]      // on active le plugin des valeurs
   });
 
-  // 5. Met à jour le graphique selon les deux listes
+  // 6. Met à jour le graphique selon les deux listes
   function afficher() {
     const d = donnees[periode.value + "-" + sens.value];   // ex : "long-hausses"
     graphique.data.labels = d.labels;
@@ -60,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
     detail.textContent = "Click a bar to see the quantities behind it.";
   }
 
-  // 6. Quand on change une liste, on met à jour
+  // 7. Quand on change une liste, on met à jour
   periode.addEventListener("change", afficher);
   sens.addEventListener("change", afficher);
 
