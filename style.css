@@ -1,7 +1,7 @@
 /* STYLE "THE SCOTSMAN" : couleurs + fonts + tailles */
 :root{
   --ink:#111; --ink-soft:#333; --grey:#666; --line:#dcdcdc; --line-dark:#111;
-  --bg-soft:#f5f5f5; --accent:#C47A1A; --up:#0B4F8A; --down:#C0392B;
+  --bg-soft:#f5f5f5; --accent:#C47A1A;
   --serif:"Merriweather",Georgia,"Times New Roman",serif;
   --ui:"Fira Sans","Helvetica Neue",Arial,sans-serif;
   --wrap:62rem; --text:44rem;
@@ -64,7 +64,6 @@ select{display:flex;align-items:center;height:2.75rem;padding:0 .75rem;border:1p
 
 .key,.status,.source{font:400 .9rem/1.5 var(--ui);color:var(--grey);margin:0 0 1rem}
 .detail{font:400 .95rem/1.5 var(--ui);color:var(--ink);background:var(--bg-soft);border-left:5px solid var(--grey);padding:.9rem 1.1rem;margin:1.25rem 0}
-.detail.up{border-left-color:var(--up)} .detail.down{border-left-color:var(--down)}
 details{margin:1.25rem 0 0;border:1px solid var(--line);padding:.8rem 1rem;background:#fff}
 summary{cursor:pointer;font:600 .95rem var(--ui)}
 table{border-collapse:collapse;width:100%;font:400 .92rem var(--ui);margin-top:.75rem}
