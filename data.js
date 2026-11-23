@@ -1,6 +1,7 @@
 /* Données du graphique : valeurs de l'onglet « Graphique » du fichier Excel (évolution en %).
-   Chaque clé = période-sens : "long" = 2005-06 → 2024-25, "recent" = 2019-20 → 2024-25 ;
+   Période : "long" = 2005-06 → 2024-25, "recent" = 2019-20 → 2024-25 ;
    "hausses" = 5 plus fortes hausses, "baisses" = 5 plus fortes baisses. */
+   
 const donnees = {
   "long-hausses": {
     labels: ["Cheese", "Confectionery", "Other fresh vegetables", "Other cereals", "Biscuits and crispbreads"],
