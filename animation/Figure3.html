@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Figure 3</title>
+<style>
+  body { margin: 0; background: transparent; font-family: "Fira Sans", sans-serif; color: #2E1A12; }
+  .box { padding: 16px; }
+  .ligne { display: grid; grid-template-columns: 140px 1fr 80px; gap: 10px; align-items: center; margin: 10px 0; }
+  .nom { font-weight: 700; text-align: right; }
+  .piste { background: #fff; height: 26px; border: 0; }
+  .barre { height: 100%; width: 0; background: #C47A1A; transition: width 1.2s ease; }
+  .go .barre { width: var(--w); }
+  .val { font-weight: 700; color: #C47A1A; }
+</style>
+</head>
+<body>
+<div class="box" id="anim">
+  <div class="ligne"><span class="nom">Green veg</span><div class="piste"><div class="barre" style="--w:100%"></div></div><span class="val">26.2 pts</span></div>
+  <div class="ligne"><span class="nom">Other fresh veg</span><div class="piste"><div class="barre" style="--w:65%"></div></div><span class="val">17.0 pts</span></div>
+  <div class="ligne"><span class="nom">Cheese</span><div class="piste"><div class="barre" style="--w:45%"></div></div><span class="val">11.7 pts</span></div>
+  <div class="ligne"><span class="nom">Confectionery</span><div class="piste"><div class="barre" style="--w:32%"></div></div><span class="val">8.5 pts</span></div>
+  <div class="ligne"><span class="nom">Other cereals</span><div class="piste"><div class="barre" style="--w:24%"></div></div><span class="val">6.4 pts</span></div>
+</div>
+<script>
+  const box = document.getElementById("anim");
+  function lancer() { box.classList.remove("go"); setTimeout(() => box.classList.add("go"), 100); }
+  lancer();
+</script>
+</body>
+</html>

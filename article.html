@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Britain’s basket has changed. Scotland’s has changed faster. | The Scotsman - Money</title>
+    <meta name="description" content="In The Scotsman Money. Scots now buy more than a third less bread than they did twenty years ago and nearly a quarter more cheese." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to the article</a>
+    <header class="scotsman-header">
+      <div class="header-top">
+        <button class="all-sections" type="button"><span class="burger">≡</span> All Sections</button>
+        <img class="masthead-logo" src="images/Logo.png" alt="The Scotsman" />
+        <span class="header-spacer"></span>
+      </div>
+      <nav class="nav">
+        <a href="#">News</a><a href="#">Business</a><a href="#">Opinion</a><a href="#">Arts</a><a href="#">Sport</a><a href="#">Food &amp; Drink</a><a href="#">e-Paper</a><a href="#">Puzzles</a><a href="#">Advertise</a><a href="#">Public Notices</a><a href="#">Heritage</a><a href="#" class="active">Money</a>
+      </nav>
+    </header>
+    <main id="content">
+      <article class="article">
+        <p class="kicker">Money&emsp; · &emsp;Food</p>
+        <h1>Britain’s basket has changed. Scotland’s has changed faster.</h1>
+        <p class="standfirst">Scots now buy over a third less bread than twenty years ago, and nearly a quarter more cheese. Here is what the figures show.</p>
+        <figure class="hero">
+          <img src="images/Banner.jpg" alt="Bread and cheese on a table" />
+          <figcaption>Picture from Stockcake.</figcaption>
+        </figure>
+        <p class="byline">By <b>Manon Farget</b><span>· &emsp; Published 27th Nov 2026</span></p>
+        <p>In 2005-06, bread was still at the centre of the Scottish shopping basket. By 2024-25, Scots were buying 37.0% less of it per person each week, almost the same fall as in the UK, down 37.4%.</p>
+        <p>Over the same period, they were buying 22.9% more cheese, against 11.2% in the UK.</p>
+        <p>That swap sums up the story. Less bread, more cheese. And for some foods, Scotland has moved further than the UK.</p>
+        <p>Figure 2 shows that swap in one image. Bread falls the same in Scotland and in the UK. Cheese rises twice as fast in Scotland.</p>
+        <figure class="viz">
+          <h3 class="viz-title">The swap. Less bread, more cheese.</h3>
+          <p class="subtitle">Scotland vs UK, 2005-06 to 2024-25.</p>
+          <img src="images/Figure2.png" alt="Grouped bar chart, Scotland in dark gold, UK in light gold, for bread and cheese" style="width:100%; display:block; background:#FFFFFF;">
+          <figcaption>Figure 2. Scotland vs UK, 2005-06 to 2024-25. Source Defra, Family Food datasets.</figcaption>
+        </figure>
+        <p>What have Scots stopped buying, what have they started buying instead, and how does Scotland compare with the rest of the UK. That is the question this article answers.</p>
+        <h2>What Scots buy less of</h2>
+        <p>Figure 1 shows the biggest rises and falls in what Scots buy, from 2005-06 to 2024-25.</p>
+        <p>How to read it. Each food has two bars, side by side. The dark bar is Scotland. The light bar is the UK. The longer the bar, the bigger the change. Hover over, or tap, a bar for the figures.</p>
+        <p>Use the controls to change the period or to show only rises or only falls.</p>
+        <figure class="viz">
+          <h3 class="viz-title" id="viz-title">Biggest rises and falls in what Scots buy</h3>
+          <p class="subtitle" id="viz-subtitle"></p>
+          <div class="controls">
+            <div>
+              <label class="field" for="periode">Period</label>
+              <select id="periode">
+                <option value="long">2005-06 to 2024-25</option>
+                <option value="recent">2019-20 to 2024-25</option>
+              </select>
+            </div>
+            <div>
+              <label class="field" for="sens">Show</label>
+              <select id="sens">
+                <option value="hausses">Rises Of Scotland</option>
+                <option value="baisses">Falls Of Scotland</option>
+              </select>
+            </div>
+          </div>
+          <div class="chart-box">
+            <canvas id="graphique" role="img" aria-label="Grouped bar chart of the biggest rises and falls in food purchases in Scotland."></canvas>
+          </div>
+          <p class="detail" id="detail" aria-live="polite">Click a bar to see the quantities behind it.</p>
+          <figcaption>Figure 1. Change in the average quantity bought per person per week, Scotland. Source Defra, Family Food datasets.</figcaption>
+        </figure>
+        <h2>Where Scotland differs</h2>
+        <p>Bread is a UK-wide change. Down 37.0% in Scotland, down 37.4% in the UK. The gap is only 0.5 points.</p>
+        <p>Cheese is different. Up 22.9% in Scotland, up 11.2% in the UK. The gap is 11.7 points.</p>
+        <p>The biggest gap is for fresh green vegetables. Down 8.4% in Scotland, down 34.5% in the UK. The gap is 26.2 points. Other fresh vegetables are up 10.0% in Scotland, down 7.1% in the UK. The gap is 17.0 points.</p>
+        <p>Fish shows the same pattern in the recent period. Since 2019-20, fish is up 15.0% in Scotland, but down 15.9% in the UK. These are the foods where Scotland really differs.</p>
+        <p>Figure 3 shows where the gap is biggest. Fresh green vegetables lead.</p>
+        <figure class="viz">
+          <h3 class="viz-title">Watch the gap. Green vegetables lead.</h3>
+          <p class="subtitle">Gap Scotland - UK, in points, 2005-06 to 2024-25.</p>
+          <iframe src="animation/figure3.html" title="Figure 3. Animated bars. Gap Scotland minus UK." style="width:100%; height: 225px; border:0; display:block;" scrolling="no"></iframe>
+          <figcaption>Figure 3. Gap Scotland minus UK, in points. Source Defra, Family Food datasets.</figcaption>
+        </figure>
+        <p>When Scotland and the UK move together, it points to a UK-wide change. When Scotland moves further, or in the opposite direction, it points to something more specific in Scotland.</p>
+        <p>What Figure 1 does not show is just as important. It shows quantities bought, not nutrients eaten, and not food wasted.</p>
+        <h2>What may explain it</h2>
+        <p>Three forces may explain much of the change, and they overlap.</p>
+        <p>First, price. Food prices rose sharply in 2022 and 2023. When prices rise, households buy less of what feels expensive or perishable, and more of what keeps or stretches across several meals.</p>
+        <p>Second, COVID. In 2020-21, eating out collapsed and home cooking rose. The recent period, 2019-20 to 2024-25, helps separate the long trend from the COVID shock.</p>
+        <p>Third, habits. Cheese fits convenience cooking easily. It keeps, and it works in pasta, pizza, baked potatoes, and snacks. Bread, in its traditional sliced-loaf form, fits it less well.</p>
+        <p>None of this proves a single cause. The data suggest a pattern. They do not prove why each household changed its basket.</p>
+        <aside class="data-note">
+          <h2>About the data</h2>
+          <p>This article is based on Defra, Family Food datasets, from the Living Costs and Food Survey.</p>
+          <p>The measure is the average quantity bought per person per week, in Scotland. Purchases are used as a proxy for consumption.</p>
+          <p>Figures are for household purchases only. They do not include food eaten out or takeaways.</p>
+        </aside>
+        <aside class="scotsman-box">
+          <h2>The Scotsman Recommended</h2>
+          <p>Check price per kilo on cheese, freeze half your loaf on the day you buy it, and look for Scottish cheese and bread from local bakers and farm shops.</p>
+        </aside>
+        <h2>Conclusion</h2>
+        <p>Scots have bought much less bread, down 37.0%, almost the same as the UK, and much more cheese, up 22.9% in Scotland against 11.2% in the UK. The basket is less centred on the daily loaf, and more centred on versatile foods that fit how people cook now.</p>
+        <p>What to buy next, if you shop in Scotland. Buy less bread, but buy better bread. Buy cheese from a Scottish producer when you can, compare price per kilo, and use it across several meals.</p>
+        <p>The open question is what comes next. Will bread keep falling, or has it found its new level. The next Family Food release will tell us.</p>
+      </article>
+    </main>
+    <footer><p>Data from Defra, <a href="https://www.gov.uk/government/statistical-data-sets/family-food-datasets">Family Food datasets</a>, published under the Open Government Licence v3.0.</p></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
