@@ -24,8 +24,7 @@ img{max-width:100%;height:auto}
 .logo-journal{display:block;height:auto;max-width:250px;width:min(60vw,340px);margin:0;padding-bottom:20px}
 .navigation{max-width:80rem;margin:0 auto;display:flex;gap:1.4rem;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;border-top:1px solid #e5e5e5;padding:.7rem 1rem;font:400 1.05rem var(--serif)}
 .navigation a{color:var(--ink);text-decoration:none;cursor:default;padding-bottom:.15rem;border-bottom:3px solid transparent}
-.navigation a:hover{border-bottom-color:#111}
-.navigation a.actif{border-bottom-color:var(--ink);font-weight:700}
+.navigation a.actif, .navigation a:hover{border-bottom-color:var(--ink);font-weight:700}
 
 /* ===== MENU "ALL SECTIONS" : sans JavaScript =====
    La case à cocher est cachée. Le bouton "All Sections" est son <label> :
