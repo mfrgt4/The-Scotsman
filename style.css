@@ -1,21 +1,3 @@
-.home{width:min(80rem,calc(100% - 2.5rem));margin:0 auto;padding:2rem 0 3rem}
-      .home-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:2rem;align-items:start}
-      .hero-img{width:100%;display:block}
-      .hero-caption{font:400 .85rem/1.5 "Fira Sans",sans-serif;color:#666;margin:.6rem 0 0}
-      .hero-text .kicker{text-align:left;margin:0 0 .8rem}
-      .hero-text h1{text-align:left;font:700 clamp(2rem,4vw,3rem)/1.15 Merriweather,serif;margin:0 0 1rem}
-      .hero-text .standfirst{text-align:left;margin:0 0 1.5rem}
-      .cta{display:inline-block;background:#111;color:#fff;text-decoration:none;padding:.9rem 1.4rem;font:600 1rem "Fira Sans",sans-serif}
-      .cta:hover{background:#C47A1A}
-      .secondary{border-top:1px solid #dcdcdc;padding-top:1.5rem;margin-top:2.5rem}
-      .secondary h2{font:700 1.3rem Merriweather,serif;margin:0 0 1.2rem}
-      .cards{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-      .card{border:1px solid #dcdcdc;padding:1.2rem;text-decoration:none;color:inherit;display:block}
-      .card h3{font:700 1.15rem/1.3 Merriweather,serif;margin:.4rem 0 .6rem}
-      .card p{font:400 .95rem/1.6 "Fira Sans",sans-serif;color:#555;margin:0}
-      .card .tag{font:700 .8rem "Fira Sans",sans-serif;color:#C47A1A;text-transform:uppercase;letter-spacing:.06em}
-      @media(max-width:700px){.home-grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr}}
-
 /* ===== PAGE DE GARDE ===== */
 /* STYLE "THE SCOTSMAN" : fond blanc, titres Georgia gras, interface sans-serif sobre */
 :root{
@@ -79,7 +61,7 @@ select{display:flex;align-items:center;height:2.75rem;padding:0 .75rem;border:1p
 .check{display:flex;gap:.6rem;align-items:center;font:400 .95rem var(--ui)}
 
 .chart-box{position:relative;height:480px;margin:0 0 1.25rem;background:#fff;padding:.5rem 0}
-@media(max-width:600px){.chart-box{height:540px}}
+
 
 .key,.status,.source{font:400 .9rem/1.5 var(--ui);color:var(--grey);margin:0 0 1rem}
 .detail{font:400 .95rem/1.5 var(--ui);color:var(--ink);background:var(--bg-soft);border-left:5px solid var(--grey);padding:.9rem 1.1rem;margin:1.25rem 0}
