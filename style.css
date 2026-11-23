@@ -1,100 +1,97 @@
-/* STYLE "THE SCOTSMAN" : couleurs + fonts + tailles */
+/* ===== STYLE "THE SCOTSMAN" : fond blanc, titres Merriweather, texte Fira Sans ===== */
 :root{
-  --texte:#111; --largeur-textee-doux:#333; --gris:#666; --bordure:#dcdcdc; --bordure-foncee:#111; /* couleurs des textes et bordures */
-  --fond-clair:#f5f5f5; --accent:#C47A1A; /* couleurs de fond et d'accentuation */
-  --police-titres:"Merriweather",Georgia,"Times New Roman",serif; /* police avec empattements */
-  --police-interface:"Fira Sans","Helvetica Neue",Arial,sans-serif; /* police sans empattements pour l'interface */
-  --largeur-page:62rem; --largeur-texte:44rem; /* largeur maximale du contenu et du texte */
+  --ink:#111; --grey:#666; --line:#dcdcdc; --bg-soft:#f5f5f5; --accent:#C47A1A;
+  --serif:"Merriweather",Georgia,"Times New Roman",serif;
+  --ui:"Fira Sans","Helvetica Neue",Arial,sans-serif;
+  --wrap:62rem; --text:44rem;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth} /* défilement fluide sur la page */
-body{margin:0;background:#fff;color:var(--texte);font:400 1.05rem/1.75 var(--police-titres)} /* style général de la page */
-a{color:inherit} /* couleur du texte sur les liens */
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font:400 1.05rem/1.75 var(--serif)}
+a{color:inherit}
+img{max-width:100%;height:auto}
 
-/* ===== HEADER ===== */
-.entete-journal{background:#fff;border-bottom:1px solid var(--bordure)}
-.haut-entete{max-width:80rem;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;padding:.9rem 1rem .7rem} /* organisation de la partie supérieure de l'en-tête */
-.bouton-sections{justify-self:start;display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid #e5e5e5;padding:.45rem .8rem;font:600 .95rem var(--police-interface);cursor:default;color:var(--texte)} /* bouton de navigation des sections */
-.icone-menu{font-size:1.3rem;line-height:1} /* taille de l'icône du menu icone-menu */
-.espace-entete{justify-self:end} /* positionnement de l'espace à droite */
-.logo-journal{display:block;height:auto;max-width:250px;width:min(60vw,340px);margin:0;padding-bottom:20px;} /* dimensionne et positionne le logo principal */
-.navigation{max-width:80rem;margin:0 auto;display:flex;gap:1.4rem;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;border-top:1px solid #e5e5e5;padding:.7rem 1rem;font:400 1.05rem var(--police-titres)} /* organise les liens de navigation horizontalement */
-.navigation a{color:var(--texte);text-decoration:none;cursor:default;padding-bottom:.15rem;border-bottom:3px solid transparent} /* style des liens de navigation */
-.navigation a.actif{border-bottom-color:var(--texte);font-weight:700} /* souligne et met en gras le lien actif */
+/* ===== LIEN D'ACCÈS DIRECT (visible seulement au clavier) ===== */
+.lien-acces-article{position:absolute;left:-999px}
+.lien-acces-article:focus{left:1rem;top:1rem;background:var(--ink);color:#fff;padding:.5rem;z-index:10}
 
-/* ===== ARTICLE : COLONNE DE TEXTE ÉTROITE, FIGURE PLUS LARGE POUR PLUS DE VISIBILITÉ ===== */
-.lien-acces-article{position:absolute;left:-999px} /* masque le lien d'accès direct au contenu */
-.lien-acces-article:focus{left:1rem;top:1rem;background:var(--texte);color:#fff;padding:.5rem;z-index:10} /* affiche le lien lorsqu'il est sélectionné au clavier */
-.article,footer{width:min(var(--largeur-page),calc(100% - 2.5rem));margin-left:auto;margin-right:auto} /* centre l'article et le pied de page */
-.article{padding:2.5rem 0 4rem} /* ajoute de l'espace autour de l'article */
-.article > *{max-width:var(--largeur-texte);margin-left:auto;margin-right:auto} /* limite la largeur des éléments de l'article */
-.article > .visualisation,.article > .encadre-donnees,.article > .encadre-recommandation{max-width:none} /* permet aux blocs spécifiques d'occuper toute la largeur disponible */
+/* ===== EN-TÊTE ===== */
+.entete-journal{background:#fff;border-bottom:1px solid var(--line)}
+.haut-entete{max-width:80rem;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;padding:.9rem 1rem .7rem}
+.bouton-sections{justify-self:start;display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid #e5e5e5;padding:.45rem .8rem;font:600 .95rem var(--ui);cursor:pointer;color:var(--ink);white-space:nowrap}
+.icone-menu{font-size:1.3rem;line-height:1}
+.espace-entete{justify-self:end}
+.logo-journal{display:block;height:auto;max-width:250px;width:min(60vw,340px);margin:0;padding-bottom:20px}
+.navigation{max-width:80rem;margin:0 auto;display:flex;gap:1.4rem;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;border-top:1px solid #e5e5e5;padding:.7rem 1rem;font:400 1.05rem var(--serif)}
+.navigation a{color:var(--ink);text-decoration:none;cursor:default;padding-bottom:.15rem;border-bottom:3px solid transparent}
+.navigation a.actif{border-bottom-color:var(--ink);font-weight:700}
 
-.rubrique-article{display:block;text-align:center;font:700 1.05rem var(--police-titres);color:var(--accent);margin:0 auto 1rem} /* style du surtitre de l'article */
-.article h1{text-align:center;font:700 clamp(2.2rem,5vw,3.4rem)/1.12 var(--police-titres);letter-spacing:-.01em;max-width:52rem;margin:0 auto 1rem} /* style du titre principal avec une taille adaptable à l'écran */
-.chapeau-article{text-align:center;font:700 1.2rem/1.5 var(--police-titres);color:#555;max-width:46rem;margin:0 auto 1.5rem} /* style du résumé placé sous le titre */
-.signature-article{display:flex;justify-content:center;gap:.9rem;flex-wrap:wrap;font:400 .9rem var(--police-interface);color:var(--gris);
-  border-top:1px solid var(--bordure);border-bottom:1px solid var(--bordure);padding:.8rem 0;margin:0 auto 2.5rem;text-align:center;max-width:var(--largeur-texte)} /* mise en page des informations de l'auteur */
-.signature-article b{color:var(--texte);font-weight:600} /* met en évidence le texte en gras de la signature */
+/* ===== MENU "ALL SECTIONS" : sans JavaScript =====
+   La case à cocher est cachée. Le bouton "All Sections" est son <label> :
+   un clic coche ou décoche la case, et le CSS affiche ou cache le panneau. */
+.menu-toggle{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.panneau-sections{display:none}
+.menu-toggle:checked ~ .panneau-sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:.25rem 1.5rem;max-width:80rem;margin:0 auto;padding:1rem;border-top:1px solid #e5e5e5}
+.panneau-sections a{padding:.6rem .25rem;border-bottom:1px solid var(--line);font:600 1rem var(--ui);color:var(--ink);text-decoration:none}
+.panneau-sections a:hover,.panneau-sections a:focus-visible{color:var(--accent);border-bottom-color:var(--accent)}
+/* bouton foncé quand le menu est ouvert, contour visible au clavier */
+.menu-toggle:checked ~ .haut-entete .bouton-sections{background:var(--ink);border-color:var(--ink);color:#fff}
+.menu-toggle:focus-visible ~ .haut-entete .bouton-sections{outline:3px solid var(--accent);outline-offset:2px}
 
-.article h2{font:700 1.4rem/1.3 var(--police-titres);margin:2.8rem auto 1.6rem;padding:0 0 1.2rem;border-bottom:1px solid #e5e5e5} /* style des titres de deuxième niveau */
-.article p{margin-top:0;margin-bottom:1.25rem} /* définit les marges des paragraphes */
+/* ===== ARTICLE : colonne de texte étroite, figures plus larges ===== */
+.article,footer{width:min(var(--wrap),calc(100% - 2.5rem));margin-left:auto;margin-right:auto}
+.article{padding:2.5rem 0 4rem}
+.article > *{max-width:var(--text);margin-left:auto;margin-right:auto}
+.article > .visualisation,.article > .encadre-donnees,.article > .encadre-recommandation{max-width:none}
 
-/* ===== FIGURE INTERACTIVE ===== */
-.article .visualisation{margin:3rem auto;padding:1.75rem;border:1px solid var(--bordure);border-top:4px solid var(--texte);background:#fff;font-family:var(--police-interface)} /* crée le bloc de la visualisation interactive */
-.titre-visualisation{font:700 1.7rem/1.15 var(--police-titres);margin:0 0 .5rem} /* style du titre de la visualisation */
-.sous-titre{color:var(--gris);font:400 1rem var(--police-interface);margin:0 0 1.5rem} /* style du sous-titre */
-.commandes{display:flex;flex-wrap:wrap;align-items:end;gap:1.25rem 2rem;padding:1rem 0;margin:0 0 1.25rem;border-top:1px solid var(--bordure);border-bottom:1px solid var(--bordure)} /* organise les différents contrôles */
-fieldset{border:0;margin:0;padding:0} /* retire les bordures par défaut des groupes de champs */
-legend,label.champ{font:600 .75rem var(--police-interface);text-transform:uppercase;letter-spacing:.08em;color:var(--gris);display:block;margin:0 0 .5rem} /* style les titres des contrôles */
+.rubrique-article{display:block;text-align:center;font:700 1.05rem var(--serif);color:var(--accent);margin:0 auto 1rem}
+.article h1{text-align:center;font:700 clamp(2.2rem,5vw,3.4rem)/1.12 var(--serif);letter-spacing:-.01em;max-width:52rem;margin:0 auto 1rem}
+.chapeau-article{text-align:center;font:700 1.2rem/1.5 var(--serif);color:#555;max-width:46rem;margin:0 auto 1.5rem}
+.image-principale img{width:100%;display:block}
+.signature-article{display:flex;justify-content:center;gap:.9rem;flex-wrap:wrap;font:400 .9rem var(--ui);color:var(--grey);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:.8rem 0;margin:0 auto 2.5rem;text-align:center;max-width:var(--text)}
+.signature-article b{color:var(--ink);font-weight:600}
 
-/* Les 2 boutons Period + le menu Show ont EXACTEMENT la même taille */
-.boutons-choix{display:flex;gap:.5rem;flex-wrap:wrap} /* affiche les boutons sur une même ligne-donnees et autorise le retour à la ligne-donnees */
-.boutons-choix label{margin:0} /* retire les marges des labels */
-.boutons-choix input{position:absolute;opacity:0} /* masque les boutons radio sans supprimer leur fonctionnement */
+.article h2{font:700 1.4rem/1.3 var(--serif);margin:2.8rem auto 1.6rem;padding:0 0 1.2rem;border-bottom:1px solid #e5e5e5}
+.article p{margin-top:0;margin-bottom:1.25rem}
+/* lettrine : première lettre du paragraphe après la signature */
+.signature-article + p::first-letter{float:left;font:300 4.6rem/.8 var(--ui);margin:.35rem .6rem 0 0;color:var(--ink)}
 
-/* Boutons Period : même largeur, même hauteur, texte centré */
-.boutons-choix span{display:flex;align-items:center;justify-content:center;width:11.5rem;height:2.75rem;padding:0 .5rem;border:1px solid var(--texte);background:#fff;cursor:pointer;font:600 .9rem var(--police-interface);text-align:center;white-space:nowrap} /* définit la taille et l'apparence des boutons */
-.boutons-choix input:checked + span{background:var(--texte);color:#fff} /* change l'apparence du bouton sélectionné */
-.boutons-choix input:focus-visible + span,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px} /* ajoute un contour lorsque l'élément est sélectionné au clavier */
+/* ===== FIGURES ===== */
+.article .visualisation{margin:3rem auto;padding:1.75rem;border:1px solid var(--line);border-top:4px solid var(--ink);background:#fff;font-family:var(--ui)}
+.titre-visualisation{font:700 1.7rem/1.15 var(--serif);margin:0 0 .5rem}
+.sous-titre{color:var(--grey);font:400 1rem var(--ui);margin:0 0 1.5rem}
+.image-figure{width:100%;display:block;background:#fff}
+.cadre-figure3{width:100%;height:225px;border:0;display:block}
+figcaption{font:400 .85rem/1.5 var(--ui);color:var(--grey);margin-top:1rem}
 
-/* Menu Show : même hauteur que les boutons Period */
-select{display:flex;align-items:center;height:2.75rem;padding:0 .75rem;border:1px solid var(--texte);background:#fff;color:var(--texte);font:600 .9rem var(--police-interface)} /* style le menu déroulant */
-.case-a-cocher{display:flex;gap:.6rem;align-items:center;font:400 .95rem var(--police-interface)} /* aligne la case à cocher et son texte */
-
-.zone-graphique{position:relative;height:480px;margin:0 0 1.25rem;background:#fff;padding:.5rem 0} /* définit la taille et la position de la zone du graphique */
-
-.legende,.statut,.source-donnees{font:400 .9rem/1.5 var(--police-interface);color:var(--gris);margin:0 0 1rem} /* style des informations secondaires du graphique */
-.detail-graphique{font:400 .95rem/1.5 var(--police-interface);color:var(--texte);background:var(--fond-clair);border-left:5px solid var(--gris);padding:.9rem 1.1rem;margin:1.25rem 0} /* crée un encadré pour les informations détaillées */
-.detail-graphique.up{border-left-color:var(--hausse)} /* couleur de bordure pour les données positives */
-.detail-graphique.down{border-left-color:var(--baisse)} /* couleur de bordure pour les données négatives */
-details{margin:1.25rem 0 0;border:1px solid var(--bordure);padding:.8rem 1rem;background:#fff} /* style le bloc de contenu repliable */
-summary{cursor:pointer;font:600 .95rem var(--police-interface)} /* style le titre cliquable du bloc repliable */
-table{border-collapse:collapse;width:100%;font:400 .92rem var(--police-interface);margin-top:.75rem} /* définit l'apparence générale du tableau */
-th,td{text-align:left;padding:.6rem .5rem;border-bottom:1px solid var(--bordure)} /* aligne le contenu des cellules et ajoute une bordure */
-th{font:600 .75rem var(--police-interface);text-transform:uppercase;letter-spacing:.06em;color:var(--gris)} /* différencie les en-têtes du tableau */
-td.num,th.num{text-align:right} /* aligne les valeurs numériques à droite */
-.texte-lecteur-ecran{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap} /* masque un élément visuellement tout en le gardant accessible */
-figcaption{font:400 .85rem/1.5 var(--police-interface);color:var(--gris);margin-top:1rem} /* style la légende sous une figure */
+/* ===== FIGURE INTERACTIVE : listes et graphique ===== */
+.commandes{display:flex;flex-wrap:wrap;align-items:end;gap:1.25rem 2rem;padding:1rem 0;margin:0 0 1.25rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+label.champ{display:block;font:600 .75rem var(--ui);text-transform:uppercase;letter-spacing:.08em;color:var(--grey);margin:0 0 .5rem}
+select{display:block;height:2.75rem;padding:0 .75rem;border:1px solid var(--ink);background:#fff;color:var(--ink);font:600 .9rem var(--ui)}
+select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.zone-graphique{position:relative;height:480px;margin:0 0 1.25rem;background:#fff;padding:.5rem 0}
+.article .detail-graphique{font:400 .95rem/1.5 var(--ui);color:var(--ink);background:var(--bg-soft);border-left:5px solid var(--grey);padding:.9rem 1.1rem;margin:1.25rem 0}
 
 /* ===== ENCADRÉS ===== */
-.encadre-donnees,.encadre-recommandation{background:var(--fond-clair);border-left:5px solid var(--texte);padding:1.25rem 1.5rem;margin:2.5rem auto} /* style général des encadrés d'information */
-.encadre-recommandation{border-left-color:var(--accent)} /* utilise la couleur d'accent pour l'encadré Scotsman */
-.encadre-donnees h2,.encadre-recommandation h2{margin-top:0;font-size:1.3rem} /* réduit la marge et la taille des titres dans les encadrés */
-.encadre-donnees p,.encadre-recommandation p{font:400 1rem/1.6 var(--police-interface)} /* applique la police de l'interface aux paragraphes des encadrés */
-.encadre-donnees p:last-child,.encadre-recommandation p:last-child{margin-bottom:0} /* retire la marge du dernier paragraphe des encadrés */
-.encadre-donnees h2,.encadre-recommandation h2{border:none;padding:0;margin-top:0;font-size:1.3rem} /* retire la bordure et le padding des titres des encadrés */
+.encadre-donnees,.encadre-recommandation{background:var(--bg-soft);border-left:5px solid var(--ink);padding:1.25rem 1.5rem;margin:2.5rem auto}
+.encadre-recommandation{border-left-color:var(--accent)}
+.encadre-donnees h2,.encadre-recommandation h2{border:none;padding:0;margin-top:0;font-size:1.3rem}
+.encadre-donnees p,.encadre-recommandation p{font:400 1rem/1.6 var(--ui)}
+.encadre-donnees p:last-child,.encadre-recommandation p:last-child{margin-bottom:0}
 
-footer{border-top:1px solid var(--bordure);padding:2rem 0;text-align:center;color:var(--gris);font:400 .85rem/1.5 var(--police-interface)} /* style le pied de page */
-footer p{margin:0 auto} /* centre le paragraphe du pied de page */
+/* ===== PIED DE PAGE ET LIENS ===== */
+.article p a{font-weight:700;text-decoration:none;border-bottom:2px solid var(--ink)}
+footer{border-top:1px solid var(--line);padding:2rem 0;text-align:center;color:var(--grey);font:400 .85rem/1.5 var(--ui)}
+footer p{margin:0 auto}
 
-/* ===== LETTRINE (1ER PARAGRAPHE APRÈS LA SIGNATURE) ===== */
-.signature-article + p::first-letter{float:left;font:300 4.6rem/.8 var(--police-interface);margin:.35rem .6rem 0 0;color:var(--texte)} /* agrandit la première lettre du paragraphe pour créer une lettrine */
-/* Liens dans le texte : gras, soulignés */
-.article p a{font-weight:700;text-decoration:none;border-bottom:2px solid var(--texte)} /* souligne les liens des paragraphes */
-
-/* ===== STYLES INLINE DÉPLACÉS DEPUIS LE HTML ===== */
-.figure-accueil{margin:0} /* retire les marges de la figure principale */
-.signature-accueil{font:400 .9rem "Fira Sans",sans-serif;color:#666} /* style la signature de l'article d'accueil */
-.image-figure{width:100%;display:block;background:#FFFFFF} /* affiche l'image sur toute la largeur disponible */
-.cadre-figure3{width:100%;height:225px;border:0;display:block} /* définit la taille et le style du cadre de la troisième figure */
+/* ===== MOBILE ===== */
+@media(max-width:700px){
+  .haut-entete{grid-template-columns:auto 1fr}
+  .espace-entete{display:none}
+  .logo-journal{max-width:230px}
+  .article .visualisation{padding:1.25rem 1rem}
+}
+@media(max-width:600px){
+  .zone-graphique{height:540px}
+}
