@@ -51,6 +51,10 @@ const valeursSurBarres = {
       const serie = chart.data.datasets[s];
       const barres = chart.getDatasetMeta(s).data;
 
+      // On prend la couleur de la série pour écrire son chiffre
+      // Scotland = doré foncé #C47A1A, UK = doré clair #E8C99A
+      ctx.fillStyle = serie.backgroundColor;
+
       // une boucle par barre
       for (let i = 0; i < serie.data.length; i++) {
         const valeur = serie.data[i];
