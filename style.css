@@ -26,7 +26,7 @@ img{max-width:100%;height:auto}
 .navigation a{color:var(--ink);text-decoration:none;cursor:default;padding-bottom:.15rem;border-bottom:3px solid transparent;transition:border-bottom-color .3s ease;}
 .navigation a:hover, .navigation a.actif{border-bottom-color:var(--ink);font-weight:700}
 
-/* ===== MENU "ALL SECTIONS" : sans JavaScript =====
+/* ===== MENU "ALL SECTIONS" =====
    La case à cocher est cachée. Le bouton "All Sections" est son <label> :
    un clic coche ou décoche la case, et le CSS affiche ou cache le panneau. */
 .menu-toggle{position:absolute;opacity:0;width:1px;height:1px;margin:0}
