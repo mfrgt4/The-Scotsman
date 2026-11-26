@@ -34,7 +34,6 @@ img{max-width:100%;height:auto}
 .menu-toggle:checked ~ .panneau-sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:.25rem 1.5rem;max-width:80rem;margin:0 auto;padding:1rem;border-top:1px solid #e5e5e5}
 .panneau-sections a{padding:.6rem .25rem;border-bottom:1px solid var(--line);font:600 1rem var(--ui);color:var(--ink);text-decoration:none;transition:border-bottom-color .3s ease;}
 .panneau-sections a:hover,.panneau-sections a:focus-visible{color:var(--accent);border-bottom-color:var(--accent)}
-/* bouton foncé quand le menu est ouvert, contour visible au clavier */
 .menu-toggle:checked ~ .haut-entete .bouton-sections{background:var(--ink);border-color:var(--ink);color:#fff}
 .menu-toggle:focus-visible ~ .haut-entete .bouton-sections{outline:3px solid var(--accent);outline-offset:2px}
 
@@ -84,14 +83,3 @@ select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 .article p a{font-weight:700;text-decoration:none;border-bottom:2px solid var(--ink)}
 footer{border-top:1px solid var(--line);padding:2rem 0;text-align:center;color:var(--grey);font:400 .85rem/1.5 var(--ui)}
 footer p{margin:0 auto}
-
-/* ===== MOBILE ===== */
-@media(max-width:700px){
-  .haut-entete{grid-template-columns:auto 1fr}
-  .espace-entete{display:none}
-  .logo-journal{max-width:230px}
-  .article .visualisation{padding:1.25rem 1rem}
-}
-@media(max-width:600px){
-  .zone-graphique{height:540px}
-}
